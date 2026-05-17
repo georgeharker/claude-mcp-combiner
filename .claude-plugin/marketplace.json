@@ -1,0 +1,16 @@
+{
+  "name": "claude-mcp-bridge",
+  "description": "Manage the mcp-companion mcp-bridge process across Claude Code sessions via sharedserver.",
+  "owner": {
+    "name": "George Harker",
+    "email": "george@georgeharker.com"
+  },
+  "plugins": [
+    {
+      "name": "claude-mcp-bridge",
+      "source": "./claude-mcp-bridge",
+      "description": "Zero-config sharedserver wrapper for mcp-companion's mcp-bridge. SessionStart attaches; SessionEnd detaches.",
+      "version": "0.1.0"
+    }
+  ]
+}
