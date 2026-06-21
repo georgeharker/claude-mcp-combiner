@@ -1,6 +1,6 @@
 {
   "name": "claude-mcp-bridge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Manage the mcp-companion mcp-bridge process across Claude Code sessions via the sharedserver CLI. SessionStart attaches; SessionEnd detaches. Bridge survives Claude restarts within the grace period and is shared with other clients (nvim, OpenCode) that use the same name.",
   "author": {
     "name": "George Harker"
