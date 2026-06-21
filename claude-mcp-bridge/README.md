@@ -67,7 +67,7 @@ All knobs are env-var overrides; sensible defaults cover the common case.
 | `CLAUDE_MCP_BRIDGE_LOG`       | _(unset)_                                                                              | Capture bridge stdout/stderr to this path (passed as `sharedserver --log-file`).     |
 | `CLAUDE_MCP_BRIDGE_COMMAND`   | resolved automatically (see below)                                                     | Override the bridge command entirely.                                                |
 | `CLAUDE_MCP_BRIDGE_ARGS`      | _(empty)_                                                                              | Extra space-split args appended to `CLAUDE_MCP_BRIDGE_COMMAND`.                      |
-| `CLAUDE_MCP_BRIDGE_CHECKOUT`  | `~/Development/neovim-plugins/mcp-companion/bridge`                                    | Where to find the bridge source if `mcp-bridge` isn't on PATH (`uv run` fallback).   |
+| `CLAUDE_MCP_BRIDGE_CHECKOUT`  | _(unset)_                                                                              | Optional bridge-source dir for the `uv run` fallback when `mcp-bridge` isn't on PATH. No default — prefer a real install (`uv tool install <…>/bridge`) or a shared venv on PATH. |
 
 ### Command resolution
 

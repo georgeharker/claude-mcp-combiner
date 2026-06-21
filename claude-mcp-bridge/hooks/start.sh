@@ -27,8 +27,12 @@ resolve_bridge_command() {
     return 0
   fi
 
-  local checkout="${CLAUDE_MCP_BRIDGE_CHECKOUT:-$HOME/Development/neovim-plugins/mcp-companion/bridge}"
-  if [[ -d "$checkout" ]] && command -v uv >/dev/null 2>&1; then
+  # Optional uv-run fallback — only when CLAUDE_MCP_BRIDGE_CHECKOUT is explicitly
+  # set to a bridge checkout. No hardcoded path default: prefer a real install
+  # (`uv tool install <…>/bridge`, or a shared venv with its bin/ on PATH) so the
+  # `mcp-bridge` lookup above resolves.
+  local checkout="${CLAUDE_MCP_BRIDGE_CHECKOUT:-}"
+  if [[ -n "$checkout" && -d "$checkout" ]] && command -v uv >/dev/null 2>&1; then
     bridge_cmd=(uv run --project "$checkout" python -m mcp_bridge)
     return 0
   fi
