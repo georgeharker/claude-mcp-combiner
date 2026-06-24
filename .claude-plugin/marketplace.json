@@ -9,8 +9,8 @@
     {
       "name": "claude-mcp-bridge",
       "source": "./claude-mcp-bridge",
-      "description": "Zero-config sharedserver wrapper for mcp-companion's mcp-bridge. SessionStart attaches; SessionEnd detaches.",
-      "version": "0.2.0"
+      "description": "Zero-config sharedserver wrapper for mcp-companion's mcp-bridge that also auto-registers the bridge's HTTP endpoint as an MCP server. SessionStart attaches; SessionEnd detaches.",
+      "version": "0.3.0"
     }
   ]
 }
