@@ -55,6 +55,25 @@ the server on session start and reconnects after `/reload-plugins`.
 > the combiner elsewhere, set `MCP_COMPANION_COMBINER_URL` to the matching full URL so the
 > registration follows.
 
+### Upgrading from `claude-mcp-bridge`
+
+This plugin was previously named **`claude-mcp-bridge`**. If you installed the old one, remove it
+before adding the renamed plugin — removing the marketplace also uninstalls its plugin. (Find the
+old names with `claude plugin list` and `claude plugin marketplace list`.)
+
+```sh
+# Remove the old marketplace (this also uninstalls the old plugin)
+claude plugin marketplace remove claude-mcp-bridge
+
+# Add the renamed plugin (from GitHub)
+claude plugin marketplace add georgeharker/claude-mcp-combiner
+claude plugin install claude-mcp-combiner
+```
+
+You can also do this interactively with `/plugin` (Installed / Marketplaces tabs). The underlying
+`mcp-combiner` package and `CLAUDE_MCP_COMBINER_*` env vars were renamed too — see the
+[combiner migration notes](https://github.com/georgeharker/mcp-companion/tree/main/combiner#readme).
+
 ### Registering manually instead
 
 If you'd rather own the registration yourself (e.g. a different scope, or you don't
