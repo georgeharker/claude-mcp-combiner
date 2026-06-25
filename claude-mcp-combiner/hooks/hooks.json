@@ -1,5 +1,5 @@
 {
-  "description": "Attach to a shared mcp-bridge process on SessionStart; detach on SessionEnd.",
+  "description": "Attach to a shared mcp-combiner process on SessionStart; detach on SessionEnd.",
   "hooks": {
     "SessionStart": [
       {

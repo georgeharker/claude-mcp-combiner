@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "mcp-companion": {
-      "type": "http",
-      "url": "${MCP_COMPANION_BRIDGE_URL:-http://127.0.0.1:9741/mcp}"
-    }
-  }
-}

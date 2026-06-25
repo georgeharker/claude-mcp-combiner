@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
-# SessionEnd hook: detach from the shared mcp-bridge process. Best-effort —
+# SessionEnd hook: detach from the shared mcp-combiner process. Best-effort —
 # if it fails or doesn't run (hard crash), sharedserver's dead-client poller
 # reaps the refcount within ~5s.
 
 set -u
 
-# Mirror start.sh: when launched under CodeCompanion / mcp-companion the bridge
+# Mirror start.sh: when launched under CodeCompanion / mcp-companion the combiner
 # was started (and is refcounted) by the host editor, not by us — we never ran
 # `sharedserver use`, so there is nothing to detach. The host owns teardown.
-if [[ -n "${MCP_COMPANION_BRIDGE_URL:-}" ]]; then
+if [[ -n "${MCP_COMPANION_COMBINER_URL:-}" ]]; then
   exit 0
 fi
 
 ss_bin="${CLAUDE_PLUGIN_ROOT}/bin/sharedserver"
-name="${CLAUDE_MCP_BRIDGE_NAME:-mcp-bridge}"
+name="${CLAUDE_MCP_COMBINER_NAME:-mcp-combiner}"
 
 # Mirror start.sh: $PPID is the ephemeral hook-wrapper shell, so walk parents
 # to find the claude PID we originally registered.
